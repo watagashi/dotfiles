@@ -41,7 +41,8 @@ fi
 
 # start some nice programs
 
-
+LANG=ja_JP.eucJP
+export LANG
 
 twm &
 xclock -geometry 50x50-1+1 &

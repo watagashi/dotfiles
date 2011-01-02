@@ -14,11 +14,23 @@ alias ll	ls -lA
 # A righteous umask
 umask 22
 
-set path = (/sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/bin)
+set path = (/usr/local/sbin /usr/local/bin /sbin /bin /usr/sbin /usr/bin /usr/games $HOME/bin)
 
 setenv	EDITOR	vi
-setenv	PAGER	more
+setenv	PAGER	less
 setenv	BLOCKSIZE	K
+
+setenv	TZ	JST-09
+
+setenv	TEMP	/var/tmp
+setenv	TMP	/var/tmp
+setenv	TMPDIR	/var/tmp
+
+setenv	LANG	ja_JP.eucJP
+
+if ( `uname` == FreeBSD && $tty =~ ttyv[0-7] ) then
+	unsetenv LANG
+endif
 
 if ($?prompt) then
 	# An interactive shell -- set some stuff up
@@ -27,8 +39,11 @@ if ($?prompt) then
 	set savehist = 100
 	set mail = (/var/mail/$USER)
 	if ( $?tcsh ) then
+		set complete=enhance
+		bindkey -v
 		bindkey "^W" backward-delete-word
 		bindkey -k up history-search-backward
 		bindkey -k down history-search-forward
+		set prompt="%n@%m:%\!:%c02%# "
 	endif
 endif
