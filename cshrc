@@ -50,5 +50,10 @@ if ($?prompt) then
 		bindkey -k up history-search-backward
 		bindkey -k down history-search-forward
 		set prompt="%n@%m:%\!:%c02%# "
+
+		setenv hgcompletion \
+			/usr/local/share/mercurial/contrib/tcsh_completion
+		if ( -r $hgcompletion) source $hgcompletion
+		unsetenv hgcompletion
 	endif
 endif
