@@ -29,7 +29,12 @@ setenv	TMPDIR	/var/tmp
 setenv	LANG	ja_JP.eucJP
 
 if ( `uname` == FreeBSD && $tty =~ ttyv[0-7] ) then
-	unsetenv LANG
+	setenv	PACKAGEROOT	ftp://ftp.jp.freebsd.org
+	setenv	FTP_PASSIVE_MODE	yes
+
+	if ( $tty =~ ttyv[0-7] ) then
+		unsetenv LANG
+	endif
 endif
 
 if ($?prompt) then
