@@ -22,6 +22,7 @@ else
 endif
 setenv	PAGER	less
 setenv	BLOCKSIZE	K
+if ( $term == ansi )	setenv	TERM	vt100
 
 setenv	TZ	JST-09
 
