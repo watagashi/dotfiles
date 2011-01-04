@@ -41,9 +41,10 @@ if ( `uname` == FreeBSD ) then
 	endif
 else if ( `uname` == SunOS ) then
 	set path=($home/bin /usr/local/bin /usr/xpg4/bin \
-		$path /usr/ucb /usr/sfw/bin /usr/openwin/bin /usr/dt/bin)
+		/usr/bin . /usr/ucb /usr/sfw/bin /usr/openwin/bin /usr/dt/bin)
 	setenv MANPATH /usr/local/share/man:/usr/sfw/share/man:/usr/share/man:/usr/openwin/share/man:/usr/dt/man:/usr/local/man
 	setenv  LD_LIBRARY_PATH /usr/local/lib:$LD_LIBRARY_PATH
+	unsetenv PAGER
 endif
 
 if ($?prompt) then
