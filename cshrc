@@ -43,7 +43,11 @@ else if ( `uname` == SunOS ) then
 	set path=($home/bin /usr/local/bin /usr/xpg4/bin \
 		$path /usr/ucb /usr/sfw/bin /usr/openwin/bin /usr/dt/bin)
 	setenv MANPATH /usr/local/share/man:/usr/sfw/share/man:/usr/share/man:/usr/openwin/share/man:/usr/dt/man:/usr/local/man
-	setenv  LD_LIBRARY_PATH /usr/local/lib:$LD_LIBRARY_PATH
+	if ( $?LD_LIBRARY_PATH ) then
+		setenv  LD_LIBRARY_PATH /usr/local/lib:$LD_LIBRARY_PATH
+	else
+		setenv  LD_LIBRARY_PATH /usr/local/lib
+	endif
 endif
 
 if ($?prompt) then
