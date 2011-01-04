@@ -1,3 +1,4 @@
+# vim:ft=tcsh:
 # $FreeBSD: src/share/skel/dot.cshrc,v 1.14.10.1.4.1 2010/06/14 02:09:06 kensmith Exp $
 #
 # .cshrc - csh resource script, read at beginning of execution by each shell
@@ -14,9 +15,11 @@ alias ll	ls -lA
 # A righteous umask
 umask 22
 
-set path = (/usr/local/sbin /usr/local/bin /sbin /bin /usr/sbin /usr/bin /usr/games $HOME/bin)
-
-setenv	EDITOR	vi
+if ( -r /usr/local/bin/vim ) then
+	setenv	EDITOR	vim\ -X
+else
+	setenv	EDITOR	vi
+endif
 setenv	PAGER	less
 setenv	BLOCKSIZE	K
 
@@ -28,13 +31,19 @@ setenv	TMPDIR	/var/tmp
 
 setenv	LANG	ja_JP.eucJP
 
-if ( `uname` == FreeBSD && $tty =~ ttyv[0-7] ) then
+if ( `uname` == FreeBSD ) then
+	set path = (/usr/local/sbin /usr/local/bin /sbin /bin /usr/sbin /usr/bin /usr/games $HOME/bin)
 	setenv	PACKAGEROOT	ftp://ftp.jp.freebsd.org
 	setenv	FTP_PASSIVE_MODE	yes
 
 	if ( $tty =~ ttyv[0-7] ) then
 		unsetenv LANG
 	endif
+else if ( `uname` == SunOS ) then
+	set path=($home/bin /usr/local/bin /usr/xpg4/bin \
+		$path /usr/ucb /usr/sfw/bin /usr/openwin/bin /usr/dt/bin)
+	setenv MANPATH /usr/local/share/man:/usr/sfw/share/man:/usr/share/man:/usr/openwin/share/man:/usr/dt/man:/usr/local/man
+	setenv  LD_LIBRARY_PATH /usr/local/lib:$LD_LIBRARY_PATH
 endif
 
 if ($?prompt) then
@@ -52,8 +61,12 @@ if ($?prompt) then
 		set prompt="%n@%m:%\!:%c02%# "
 
 		setenv hgcompletion \
-			/usr/local/share/mercurial/contrib/tcsh_completion
-		if ( -r $hgcompletion) source $hgcompletion
+			mercurial/contrib/tcsh_completion
+		if ( -r /usr/local/share/$hgcompletion ) then
+			source /usr/local/share/$hgcompletion
+		else if ( -r /usr/local/doc/$hgcompletion ) then
+			source /usr/local/doc/$hgcompletion
+		endif
 		unsetenv hgcompletion
 	endif
 endif
