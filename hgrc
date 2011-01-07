@@ -1,0 +1,39 @@
+[ui]
+username=Takashi WADA
+editor=
+merge = internal:merge
+
+[extensions]
+hgext.graphlog =
+hgext.color =
+#hgext.win32mbcs =
+hgext.mq = 
+hgext.extdiff =
+hgext.fetch =
+hgext.purge =
+hgext.record =
+
+#hgext.win32text =
+#[encode]
+#** = cleverencode:
+#[decode]
+#** = cleverdecode:
+
+[diff]
+#git = 1
+nodates = 1
+
+[extdiff]
+cmd.docdiff = docdiff
+
+[merge-patterns]
+**.doc = docdiff
+**.docx = docdiff
+
+[merge-tools]
+docdiff.executable = docdiff
+docdiff.args = $local $base $other $output
+
+[paths]
+vimfiles = ~/vimfiles
+dotfiles = ~/dotfiles
