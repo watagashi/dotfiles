@@ -23,6 +23,9 @@ hgext.record =
 #git = 1
 nodates = 1
 
+[mq]
+git = keep
+
 [extdiff]
 cmd.docdiff = docdiff
 
