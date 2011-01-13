@@ -45,7 +45,7 @@ LANG=ja_JP.eucJP
 export LANG
 
 twm &
-xclock -geometry 50x50-1+1 &
+emiclock -geometry -1+1 && xclock -geometry 50x50-1+1 &
 xterm -geometry 80x40+494+51 &
 xterm -geometry 80x20+494-0 &
 exec xterm -geometry 80x46+0+0 -name login
