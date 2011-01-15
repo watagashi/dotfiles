@@ -53,6 +53,7 @@ else if ( `uname` == SunOS ) then
 endif
 if ( -x ~/vimpager/vimpager ) then
 	setenv	PAGER	~/vimpager/vimpager
+	alias	less	$PAGER
 endif
 
 if ($?prompt) then
