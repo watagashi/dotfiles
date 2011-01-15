@@ -31,6 +31,7 @@ setenv	TMP	/var/tmp
 setenv	TMPDIR	/var/tmp
 
 setenv	LANG	ja_JP.eucJP
+if ( $term == cygwin )	setenv	LANG	ja_JP.SJIS
 
 if ( `uname` == FreeBSD ) then
 	set path = (/usr/local/sbin /usr/local/bin /sbin /bin /usr/sbin /usr/bin /usr/games $HOME/bin)
