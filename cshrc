@@ -51,6 +51,9 @@ else if ( `uname` == SunOS ) then
 	endif
 	unsetenv PAGER
 endif
+if ( -x ~/vimpager/vimpager ) then
+	setenv	PAGER	~/vimpager/vimpager
+endif
 
 if ($?prompt) then
 	# An interactive shell -- set some stuff up
