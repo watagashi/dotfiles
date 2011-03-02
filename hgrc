@@ -32,6 +32,8 @@ cmd.docdiff = docdiff
 [merge-patterns]
 **.doc = docdiff
 **.docx = docdiff
+**.xls = docdiff
+**.xlsx = docdiff
 
 [merge-tools]
 docdiff.executable = docdiff
