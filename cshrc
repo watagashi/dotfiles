@@ -56,6 +56,7 @@ if ( -x ~/vimpager/vimpager ) then
 	setenv	PAGER	~/vimpager/vimpager
 	alias	less	$PAGER
 endif
+if (! $?SSH_CLIENT ) unsetenv DISPLAY
 
 if ($?prompt) then
 	# An interactive shell -- set some stuff up
