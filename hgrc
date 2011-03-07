@@ -27,17 +27,31 @@ nodates = 1
 git = keep
 
 [extdiff]
-cmd.docdiff = docdiff
+cmd.docdiff = %ProgramFiles%/TortoiseHg/docdiff.exe
+cmd.vimdiff = vim
+opts.vimdiff = -d
+cmd.gvimdiff = gvim
+opts.gvimdiff = -d
 
 [merge-patterns]
-**.doc = docdiff
-**.docx = docdiff
+## TortoiseHg default
+#**.doc = docdiff
+#**.docx = docdiff
 **.xls = docdiff
 **.xlsx = docdiff
 
 [merge-tools]
-docdiff.executable = docdiff
-docdiff.args = $local $base $other $output
+## TortoiseHg default
+#docdiff.executable = docdiff
+#docdiff.regkey = Software\TortoiseHg
+#docdiff.args = $local $base $other $output
+
+# http://mercurial.selenic.com/wiki/MergingWithVim
+vimdiff.executable = vim
+vimdiff.args = -d $base $local $output $other +close +close
+gvimdiff.executable = gvim
+gvimdiff.args = -d $base $local $output $other +close +close
+gvimdiff.gui = True
 
 [paths]
 vimfiles = ~/vimfiles
