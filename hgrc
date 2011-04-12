@@ -49,8 +49,12 @@ opts.gvimdiff = -d
 # http://mercurial.selenic.com/wiki/MergingWithVim
 vimdiff.executable = vim
 vimdiff.args = -d $base $local $output $other +close +close
+vimdiff.diffargs = -d $parent $child
+vimdiff.diff3args = -d $parent1 $child $parent2
 gvimdiff.executable = gvim
 gvimdiff.args = -d $base $local $output $other +close +close
+gvimdiff.diffargs = -d $parent $child
+gvimdiff.diff3args = -d $parent1 $child $parent2
 gvimdiff.gui = True
 
 [paths]
