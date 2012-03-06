@@ -12,6 +12,7 @@ hgext.extdiff =
 hgext.fetch =
 hgext.purge =
 hgext.record =
+hgext.zipdoc =
 
 #hgext.win32text =
 #[encode]
@@ -60,3 +61,67 @@ gvimdiff.gui = True
 [paths]
 vimfiles = ~/vimfiles
 dotfiles = ~/dotfiles
+
+[encode]
+# Office Open XML
+**.docx = zipdocencode
+**.docm = zipdocencode
+**.dotx = zipdocencode
+**.dotm = zipdocencode
+**.xlsx = zipdocencode
+**.xlsm = zipdocencode
+**.xltx = zipdocencode
+**.xltm = zipdocencode
+**.xlsb = zipdocencode
+**.xlam = zipdocencode
+**.pptx = zipdocencode
+**.pptm = zipdocencode
+**.potx = zipdocencode
+**.potm = zipdocencode
+**.ppam = zipdocencode
+**.ppsx = zipdocencode
+**.ppsm = zipdocencode
+# OpenDocument (ODF)
+**.odt = zipdocencode
+**.odt = zipdocencode
+**.ods = zipdocencode
+**.odp = zipdocencode
+**.odb = zipdocencode
+**.odg = zipdocencode
+**.odf = zipdocencode
+# other
+**.xps = zipdocencode
+**.oxps = zipdocencode
+**.epub = zipdocencode
+
+[decode]
+# Office Open XML
+**.docx = zipdocdecode
+**.docm = zipdocdecode
+**.dotx = zipdocdecode
+**.dotm = zipdocdecode
+**.xlsx = zipdocdecode
+**.xlsm = zipdocdecode
+**.xltx = zipdocdecode
+**.xltm = zipdocdecode
+**.xlsb = zipdocdecode
+**.xlam = zipdocdecode
+**.pptx = zipdocdecode
+**.pptm = zipdocdecode
+**.potx = zipdocdecode
+**.potm = zipdocdecode
+**.ppam = zipdocdecode
+**.ppsx = zipdocdecode
+**.ppsm = zipdocdecode
+# OpenDocument (ODF)
+**.odt = zipdocdecode
+**.odt = zipdocdecode
+**.ods = zipdocdecode
+**.odp = zipdocdecode
+**.odb = zipdocdecode
+**.odg = zipdocdecode
+**.odf = zipdocdecode
+# other
+**.xps = zipdocdecode
+**.oxps = zipdocdecode
+**.epub = zipdocdecode
