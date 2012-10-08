@@ -26,6 +26,7 @@ nodates = 1
 
 [mq]
 git = keep
+secret = True
 
 [extdiff]
 cmd.docdiff = %ProgramFiles%/TortoiseHg/docdiff.exe
