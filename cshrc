@@ -51,6 +51,9 @@ else if ( `uname` == SunOS ) then
 		setenv  LD_LIBRARY_PATH /usr/local/lib
 	endif
 	unsetenv PAGER
+else if ( `uname` == Darwin ) then
+	setenv	LANG	ja_JP.utf-8
+	set path = (/usr/local/bin /usr/bin /bin /usr/sbin /sbin)
 endif
 if ( -x ~/vimpager/vimpager ) then
 	setenv	PAGER	~/vimpager/vimpager
