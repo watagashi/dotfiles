@@ -21,6 +21,13 @@ else
 	setenv	EDITOR	vi
 endif
 setenv	PAGER	less
+if ( -x "/Applications/MacVim.app/Contents/MacOS/Vim" ) then
+    alias vim '/Applications/MacVim.app/Contents/MacOS/Vim'
+    alias gvim '/Applications/MacVim.app/Contents/MacOS/Vim -g'
+    alias view '/Applications/MacVim.app/Contents/MacOS/view'
+    alias vimdiff '/Applications/MacVim.app/Contents/MacOS/vimdiff'
+    #alias ctags '/Applications/MacVim.app/Contents/MacOS/ctags'
+endif
 setenv	BLOCKSIZE	K
 if ( $term == ansi )	setenv	TERM	vt100
 
@@ -57,6 +64,10 @@ else if ( `uname` == Darwin ) then
 endif
 if ( -x ~/vimpager/vimpager ) then
 	setenv	PAGER	~/vimpager/vimpager
+	alias	less	$PAGER
+endif
+if ( -x /usr/local/bin/vimpager ) then
+	setenv PAGER vimpager
 	alias	less	$PAGER
 endif
 if (! $?SSH_CLIENT ) unsetenv DISPLAY
