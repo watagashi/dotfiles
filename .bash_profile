@@ -1,3 +1,7 @@
+# ~/.bash_profile
+#   source ~/dotfiles/.bash_profile
+#   test -r ~/.bashrc && . ~/.bashrc
+
 export PATH=/usr/local/bin:$PATH
 [[ -e "/usr/local/bin/vimpager" ]] && export PAGER=vimpager
 if [ -x "/Applications/MacVim.app/Contents/MacOS/Vim" ]
