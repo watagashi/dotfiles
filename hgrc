@@ -1,6 +1,6 @@
 [ui]
 username=Takashi WADA
-editor=
+editor=vim
 merge = internal:merge
 
 [extensions]
