@@ -21,13 +21,6 @@ else
 	setenv	EDITOR	vi
 endif
 setenv	PAGER	less
-if ( -x "/Applications/MacVim.app/Contents/MacOS/Vim" ) then
-    alias vim '/Applications/MacVim.app/Contents/MacOS/Vim'
-    alias gvim '/Applications/MacVim.app/Contents/MacOS/Vim -g'
-    alias view '/Applications/MacVim.app/Contents/MacOS/view'
-    alias vimdiff '/Applications/MacVim.app/Contents/MacOS/vimdiff'
-    #alias ctags '/Applications/MacVim.app/Contents/MacOS/ctags'
-endif
 setenv	BLOCKSIZE	K
 if ( $term == ansi )	setenv	TERM	vt100
 
@@ -61,6 +54,14 @@ else if ( `uname` == SunOS ) then
 else if ( `uname` == Darwin ) then
 	setenv	LANG	ja_JP.utf-8
 	set path = (/usr/local/bin /usr/bin /bin /usr/sbin /sbin)
+	if ( -x "/Applications/MacVim.app/Contents/MacOS/Vim" ) then
+		# alias vim '/Applications/MacVim.app/Contents/MacOS/Vim'
+		alias gvim '/Applications/MacVim.app/Contents/MacOS/Vim -g'
+		# alias view '/Applications/MacVim.app/Contents/MacOS/view'
+		# alias vimdiff '/Applications/MacVim.app/Contents/MacOS/vimdiff'
+		#alias ctags '/Applications/MacVim.app/Contents/MacOS/ctags'
+		set path = (/Applications/MacVim.app/Contents/MacOS $path)
+	endif
 endif
 if ( -x ~/vimpager/vimpager ) then
 	setenv	PAGER	~/vimpager/vimpager
