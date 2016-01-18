@@ -1,0 +1,6 @@
+[push]
+	default = current
+[rebase]
+	autoStash = true
+[merge]
+	conflictstyle = diff3
