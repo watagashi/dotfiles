@@ -1,3 +1,5 @@
+[core]
+	autocrlf = input
 [push]
 	default = current
 [rebase]
