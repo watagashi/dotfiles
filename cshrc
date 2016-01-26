@@ -55,11 +55,10 @@ else if ( `uname` == Darwin ) then
 	setenv	LANG	ja_JP.utf-8
 	set path = (/usr/local/bin /usr/bin /bin /usr/sbin /sbin)
 	if ( -x "/Applications/MacVim.app/Contents/MacOS/Vim" ) then
-		# alias vim '/Applications/MacVim.app/Contents/MacOS/Vim'
+		alias vim '/Applications/MacVim.app/Contents/MacOS/Vim'
 		alias gvim '/Applications/MacVim.app/Contents/MacOS/Vim -g'
-		# alias view '/Applications/MacVim.app/Contents/MacOS/view'
-		# alias vimdiff '/Applications/MacVim.app/Contents/MacOS/vimdiff'
-		#alias ctags '/Applications/MacVim.app/Contents/MacOS/ctags'
+		alias view '/Applications/MacVim.app/Contents/MacOS/view'
+		alias vimdiff '/Applications/MacVim.app/Contents/MacOS/vimdiff'
 		set path = (/Applications/MacVim.app/Contents/MacOS $path)
 	endif
 endif
