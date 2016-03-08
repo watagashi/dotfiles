@@ -6,3 +6,5 @@
 	autoStash = true
 [merge]
 	conflictstyle = diff3
+[color]
+	pager = false
