@@ -11,6 +11,7 @@ alias j		jobs -l
 alias la	ls -a
 alias lf	ls -FA
 alias ll	ls -lA
+alias path	setenv PATH \$PATH
 
 # A righteous umask
 umask 22
