@@ -8,10 +8,9 @@
 
 alias h		history 25
 alias j		jobs -l
-alias la	ls -a
+alias la	ls -aF
 alias lf	ls -FA
-alias ll	ls -lA
-alias path	setenv PATH \$PATH
+alias ll	ls -lAF
 
 # A righteous umask
 umask 22
