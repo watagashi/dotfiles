@@ -75,8 +75,12 @@ if (! $?SSH_CLIENT ) unsetenv DISPLAY
 if ($?prompt) then
 	# An interactive shell -- set some stuff up
 	set filec
-	set history = 100
-	set savehist = 100
+	set history = 1000
+	set savehist = (1000 merge)
+	set autolist = ambiguous
+	# Use history to aid expansion
+	set autoexpand
+	set autorehash
 	set mail = (/var/mail/$USER)
 	if ( $?tcsh ) then
 		set complete=enhance
