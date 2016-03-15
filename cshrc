@@ -74,6 +74,9 @@ if (! $?SSH_CLIENT ) unsetenv DISPLAY
 
 if ($?prompt) then
 	# An interactive shell -- set some stuff up
+	set prompt = "%N@%m:%~ %# "
+	set promptchars = "%#"
+	
 	set filec
 	set history = 1000
 	set savehist = (1000 merge)
@@ -88,7 +91,6 @@ if ($?prompt) then
 		bindkey "^W" backward-delete-word
 		bindkey -k up history-search-backward
 		bindkey -k down history-search-forward
-		set prompt="%n@%m:%\!:%c02%# "
 
 		setenv hgcompletion \
 			mercurial/contrib/tcsh_completion
