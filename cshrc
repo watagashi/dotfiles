@@ -17,6 +17,9 @@ umask 22
 
 if ( -r /usr/local/bin/vim ) then
 	setenv	EDITOR	vim\ -X
+else if ( -r /Applications/MacVim.app/Contents/MacOS/Vim ) then
+	# setenv	EDITOR	/Applications/MacVim.app/Contents/MacOS/Vim\ -X
+	setenv	EDITOR	vim\ -X
 else
 	setenv	EDITOR	vi
 endif
