@@ -12,7 +12,6 @@ hgext.extdiff =
 hgext.fetch =
 hgext.purge =
 hgext.rebase =
-hgext.record =
 hgext.zipdoc =
 
 #hgext.win32text =
