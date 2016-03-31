@@ -13,7 +13,7 @@ hgext.fetch =
 hgext.purge =
 hgext.rebase =
 hgext.histedit =
-hgext.zipdoc =
+#hgext.zipdoc =
 
 #hgext.win32text =
 #[encode]
