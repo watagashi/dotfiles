@@ -70,6 +70,8 @@ SAVEHIST=1000
 
 # $EDITOR に vi を含むなら bindkey -v が有効になる。
 # bindkey -v
+bindkey "^N" down-line-or-history
+bindkey "^P" up-line-or-history
 
 # http://gihyo.jp/dev/serial/01/zsh-book/0002
 setopt auto_cd auto_remove_slash auto_name_dirs 
