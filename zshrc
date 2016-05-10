@@ -82,3 +82,9 @@ setopt cdable_vars sh_word_split auto_param_keys pushd_ignore_dups
 #setopt share_history inc_append_history
 
 autoload -U compinit && compinit
+
+# http://gihyo.jp/dev/serial/01/zsh-book/0005
+#zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' 'm:{a-zA-Z}={A-Za-z} r:|[-_.]=**'
+# http://www.zsh.org/mla/users/2006/msg00390.html
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z} m:[-._]=[-._] r:|[-./_]=** r:|=*' '+l:|=*'
+
