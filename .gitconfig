@@ -9,3 +9,5 @@
 	conflictstyle = diff3
 [color]
 	pager = false
+[rerere]
+	enabled = true
