@@ -88,3 +88,8 @@ autoload -U compinit && compinit
 # http://www.zsh.org/mla/users/2006/msg00390.html
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z} m:[-._]=[-._] r:|[-./_]=** r:|=*' '+l:|=*'
 
+for f in 'zsh-autosuggestions' 'zsh-syntax-highlighting'; do
+	p="/usr/local/share/${f}/${f}.zsh"
+	[[ -f ${p} ]] && source ${p}
+done
+unset f p
