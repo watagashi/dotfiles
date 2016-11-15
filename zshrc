@@ -43,8 +43,7 @@ if [[ `uname` == FreeBSD ]]; then
 elif [[ `uname` == Darwin ]]; then
 	# export LANG=ja_JP.utf-8
 
-	path=(/Applications/MacVim.app/Contents/MacOS(N) /usr/local/bin /usr/bin /bin /usr/sbin /sbin)
-	typeset -U path
+	path=(/Applications/MacVim.app/Contents/MacOS(N) ~/.yarn-config/global/node_modules/.bin(N) /usr/local/bin /usr/bin /bin /usr/sbin /sbin)
 
 	if [[ -x /Applications/MacVim.app/Contents/MacOS/Vim ]]; then
 		alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
@@ -53,6 +52,8 @@ elif [[ `uname` == Darwin ]]; then
 		alias vimdiff='/Applications/MacVim.app/Contents/MacOS/vimdiff'
 	fi
 fi
+
+typeset -U path
 
 if [[ -x ~/vimpager/vimpager ]]; then
 	export PAGER=~/vimpager/vimpager
