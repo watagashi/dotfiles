@@ -32,26 +32,31 @@ export TEMP=/var/tmp
 export TMP=$TEMP
 export TMPDIR=$TEMP
 
-if [[ `uname` == FreeBSD ]]; then
-	path=(/usr/local/sbin /usr/local/bin /sbin /bin /usr/sbin /usr/bin /usr/games $HOME/bin)
-	export PACKAGEROOT=ftp://ftp.jp.freebsd.org
-	export FTP_PASSIVE_MODE=yes
+case $(uname) in
+	(FreeBSD)
+		path=(/usr/local/sbin /usr/local/bin /sbin /bin /usr/sbin /usr/bin /usr/games $HOME/bin)
+		export PACKAGEROOT=ftp://ftp.jp.freebsd.org
+		export FTP_PASSIVE_MODE=yes
 
-	if [[ $tty =~ ttyv[0-7] ]]; then
-		export LANG=
-	fi
-elif [[ `uname` == Darwin ]]; then
-	# export LANG=ja_JP.utf-8
+		if [[ $tty =~ ttyv[0-7] ]]; then
+			export LANG=
+		fi
+		;;
+	(Darwin)
+		# export LANG=ja_JP.utf-8
 
-	path=(/Applications/MacVim.app/Contents/MacOS(N) ~/.yarn-config/global/node_modules/.bin(N) /usr/local/bin /usr/bin /bin /usr/sbin /sbin)
+		path=(/Applications/MacVim.app/Contents/MacOS(N) ~/.yarn-config/global/node_modules/.bin(N) /usr/local/bin /usr/bin /bin /usr/sbin /sbin)
 
-	if [[ -x /Applications/MacVim.app/Contents/MacOS/Vim ]]; then
-		alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-		alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
-		alias view='/Applications/MacVim.app/Contents/MacOS/view'
-		alias vimdiff='/Applications/MacVim.app/Contents/MacOS/vimdiff'
-	fi
-fi
+		VIM=/Applications/MacVim.app/Contents/Resources/vim
+		if [[ -x $VIM/../../MacOS/Vim ]]; then
+			alias vim="$VIM/../../MacOS/Vim"
+			alias gvim="$VIM/../../MacOS/Vim -g"
+			alias view="$VIM/../../MacOS/view"
+			alias vimdiff="$VIM/../MacOS/vimdiff"
+		fi
+		unset VIM
+		;;
+esac
 
 typeset -U path
 
