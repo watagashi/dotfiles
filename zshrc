@@ -43,7 +43,7 @@ case $(uname) in
 		fi
 		;;
 	(Darwin)
-		# export LANG=ja_JP.utf-8
+		export LANG=ja_JP.utf-8
 
 		path=(/Applications/MacVim.app/Contents/MacOS(N) ~/.yarn-config/global/node_modules/.bin(N) /usr/local/bin /usr/bin /bin /usr/sbin /sbin)
 
