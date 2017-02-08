@@ -45,7 +45,7 @@ case $(uname) in
 	(Darwin)
 		export LANG=ja_JP.utf-8
 
-		path=(/Applications/MacVim.app/Contents/MacOS(N) ~/.config/yarn/global/node_modules/.bin(N) ~/.yarn-config/global/node_modules/.bin(N) /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/sbin(N))
+		path=(/Applications/MacVim.app/Contents/MacOS(N) ~/.config/yarn/global/node_modules/.bin(N) ~/.yarn-config/global/node_modules/.bin(N) /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/sbin(N) ~/bin(N))
 
 		VIM=/Applications/MacVim.app/Contents/Resources/vim
 		if [[ -x $VIM/../../MacOS/Vim ]]; then
