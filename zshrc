@@ -68,7 +68,12 @@ elif [[ -x /usr/local/bin/vimpager ]]; then
 	alias less=$PAGER
 fi
 
-PROMPT="%n@%m:%~ %# "
+if [[ -r /usr/local/opt/zsh-git-prompt/zshrc.sh ]]; then
+	source "/usr/local/opt/zsh-git-prompt/zshrc.sh"
+	PROMPT='%n@%m:%~$(git_super_status) %# '
+else
+	PROMPT='%n@%m:%~ %# '
+fi
 
 HISTSIZE=1000
 HISTFILE=~/.zhistory
