@@ -51,7 +51,7 @@ case $(uname) in
 		if [[ -x $VIM/../../MacOS/Vim ]]; then
 			alias vim="$VIM/../../MacOS/Vim"
 			alias gvim="$VIM/../../MacOS/Vim -g"
-			alias view="$VIM/../../MacOS/view"
+			alias view="$VIM/../../MacOS/vim -R"
 			alias vimdiff="$VIM/../MacOS/vimdiff"
 		fi
 		unset VIM
