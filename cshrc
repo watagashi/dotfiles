@@ -60,7 +60,7 @@ else if ( `uname` == Darwin ) then
 	if ( -x "/Applications/MacVim.app/Contents/MacOS/Vim" ) then
 		alias vim '/Applications/MacVim.app/Contents/MacOS/Vim'
 		alias gvim '/Applications/MacVim.app/Contents/MacOS/Vim -g'
-		alias view '/Applications/MacVim.app/Contents/MacOS/view'
+		alias view '/Applications/MacVim.app/Contents/MacOS/vim -R'
 		alias vimdiff '/Applications/MacVim.app/Contents/MacOS/vimdiff'
 		set path = (/Applications/MacVim.app/Contents/MacOS $path)
 	endif
