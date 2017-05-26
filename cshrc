@@ -56,7 +56,7 @@ else if ( `uname` == SunOS ) then
 	unsetenv PAGER
 else if ( `uname` == Darwin ) then
 	setenv	LANG	ja_JP.utf-8
-	set path = (/usr/local/bin /usr/bin /bin /usr/sbin /sbin)
+	set path = (~/.config/yarn/global/node_modules/.bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin)
 	if ( -x "/Applications/MacVim.app/Contents/MacOS/Vim" ) then
 		alias vim '/Applications/MacVim.app/Contents/MacOS/Vim'
 		alias gvim '/Applications/MacVim.app/Contents/MacOS/Vim -g'
