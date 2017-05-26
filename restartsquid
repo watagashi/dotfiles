@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+while getopts f OPT
+do
+	case $OPT in
+		f)	FORCE=0
+			;;
+	esac
+done
+shift $((OPTIND - 1))
+
+if [[ $FORCE ]] \
+	|| ! (curl -s --connect-timeout 3 https://www.google.com > /dev/null) {
+	brew services stop squid
+	rm /usr/local/var/run/squid.pid
+	brew services start squid
+}
