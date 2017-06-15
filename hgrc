@@ -13,6 +13,7 @@ hgext.fetch =
 hgext.purge =
 hgext.rebase =
 hgext.histedit =
+hgext.shelve =
 #hgext.zipdoc =
 
 #hgext.win32text =
