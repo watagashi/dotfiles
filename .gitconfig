@@ -1,5 +1,6 @@
 [core]
 	autocrlf = input
+	quotePath = false
 [push]
 	default = current
 [rebase]
