@@ -65,7 +65,7 @@ HISTFILE=~/.zhistory
 SAVEHIST=1000
 
 # $EDITOR に vi を含むなら bindkey -v が有効になる。
-# bindkey -v
+bindkey -v
 bindkey "^N" down-line-or-history
 bindkey "^P" up-line-or-history
 
