@@ -11,7 +11,7 @@ case $(uname) in
 	(Darwin)
 		export LANG=ja_JP.utf-8
 
-		path=(/Applications/MacVim.app/Contents/MacOS(N) ~/.config/yarn/global/node_modules/.bin(N) ~/.yarn-config/global/node_modules/.bin(N) /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/sbin(N) ~/bin(N))
+		path=(/Applications/MacVim.app/Contents/MacOS(N) ~/.config/yarn/global/node_modules/.bin(N) ~/.yarn-config/global/node_modules/.bin(N) /usr/local/opt/gettext/bin(N) /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/sbin(N) ~/bin(N))
 		;;
 esac
 
