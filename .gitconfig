@@ -12,3 +12,5 @@
 	pager = false
 [rerere]
 	enabled = true
+[gui]
+	encoding = utf-8
