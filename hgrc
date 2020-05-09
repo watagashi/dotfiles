@@ -6,7 +6,7 @@ merge = internal:merge
 [auth]
 bitbucket.prefix = https://bitbucket.org/watagashi
 bitbucket.username = watagashi
-# bitbucket.password = # write ~/.hgrc after app-password has been generated at https://bitbucket.org/account/settings/app-passwords/>
+# bitbucket.password = # write ~/.hgrc after app-password has been generated at <https://bitbucket.org/account/settings/app-passwords/>
 
 [extensions]
 hgext.graphlog =
