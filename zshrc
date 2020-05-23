@@ -35,7 +35,7 @@ export TMPDIR=$TEMP
 case $(uname) in
 	(Darwin)
 		VIM=/Applications/MacVim.app/Contents/Resources/vim
-		if [[ -x $VIM/../../MacOS/Vim ]]; then
+		if ! [[ -x /usr/local/bin/mvim ]] && [[ -x $VIM/../../MacOS/Vim ]]; then
 			alias vim="$VIM/../../MacOS/Vim"
 			alias gvim="$VIM/../../MacOS/Vim -g"
 			alias view="$VIM/../../MacOS/vim -R"
