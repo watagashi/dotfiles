@@ -8,10 +8,10 @@ umask 22
 
 export EDITOR=vi
 if [[ -r /usr/local/bin/vim ]]; then
-	export EDITOR=vim\ -X
+	export EDITOR=vim
 elif [[ -r /Applications/MacVim.app/Contents/MacOS/Vim ]]; then
 	# export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim\ -X
-	export EDITOR=vim\ -X
+	export EDITOR=vim
 fi
 
 export PAGER=less
@@ -45,8 +45,8 @@ case $(uname) in
 		;;
 esac
 
-if [[ -x ~/vimpager/vimpager ]]; then
-	export PAGER=~/vimpager/vimpager
+if [[ -x ~/.vim/plugged/vimpager/vimpager ]]; then
+	export PAGER=~/.vim/plugged/vimpager/vimpager
 	alias less=$PAGER
 elif [[ -x /usr/local/bin/vimpager ]]; then
 	export PAGER=vimpager
