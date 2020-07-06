@@ -14,6 +14,8 @@
 	quotepath = false
 [push]
 	default = current
+[pull]
+	ff = only
 [rebase]
 	autostash = true
 	autosquash = true
