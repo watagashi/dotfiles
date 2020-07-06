@@ -11,11 +11,11 @@
 ;	email =
 [core]
 	autocrlf = input
-	quotePath = false
+	quotepath = false
 [push]
 	default = current
 [rebase]
-	autoStash = true
+	autostash = true
 	autosquash = true
 [merge]
 	conflictstyle = diff3
