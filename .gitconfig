@@ -5,6 +5,11 @@
 # [user]
 # 	name = WADA Takashi
 # 	email =
+#	signingKey = 1E06581B4036247F
+# [commit]
+# 	gpgSign = true
+# [tag]
+# 	gpgSign = true
 
 [user]
 	name = WADA Takashi
