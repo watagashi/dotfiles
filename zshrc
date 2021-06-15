@@ -77,12 +77,17 @@ setopt cdable_vars sh_word_split auto_param_keys pushd_ignore_dups
 #setopt auto_menu  correct rm_star_silent sun_keyboard_hack
 #setopt share_history inc_append_history
 
-autoload -U compinit && compinit
+if type brew &>/dev/null; then
+	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+	autoload -Uz compinit
+	compinit
+fi
 
 # http://gihyo.jp/dev/serial/01/zsh-book/0005
 #zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' 'm:{a-zA-Z}={A-Za-z} r:|[-_.]=**'
 # http://www.zsh.org/mla/users/2006/msg00390.html
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z} m:[-._]=[-._] r:|[-./_]=** r:|=*' '+l:|=*'
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z} m:[-._]=[-._] r:|[-./_]=** r:|=*' '+l:|=*'
 
 for f in 'zsh-autosuggestions' 'zsh-syntax-highlighting'; do
 	p="/usr/local/share/${f}/${f}.zsh"
